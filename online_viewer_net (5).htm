@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit Contrato de Trabalho Inteligente | Michelle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #0A0603;
+      --bg-surface: rgba(25, 18, 12, 0.9);
+      --bg-card: rgba(35, 28, 20, 0.95);
+      --border: rgba(212, 175, 55, 0.15);
+      --border-hover: rgba(212, 175, 55, 0.45);
+      --text-primary: #FFFFFF;
+      --text-secondary: #E8E0D5;
+      --text-muted: #B8B0A0;
+      --gold: #F5D485;
+      --gold-bright: #FFE4A1;
+      --gold-dim: #C4A35A;
+      --radius: 24px;
+      --radius-sm: 16px;
+      --radius-xs: 12px;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 400;
+      background: var(--bg-base);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 20% 0%, rgba(138, 109, 59, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 80% 100%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Typography Scale - refined */
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      text-wrap: balance;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      text-wrap: pretty;
+    }
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section {
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 72px 0;
+      }
+    }
+
+    /* Glass Card - refined */
+    .glass-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg,
+          rgba(212, 175, 55, 0.35) 0%,
+          transparent 35% 65%,
+          rgba(212, 175, 55, 0.2) 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-hover);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+      background: rgba(42, 34, 26, 0.98);
+    }
+
+    /* Section Cream */
+    .section-cream {
+      background: linear-gradient(180deg, #F8F6F1 0%, #EFEBE3 100%);
+      color: #1A1510;
+    }
+
+    .section-cream::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(138, 109, 59, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(212, 175, 55, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .section-cream h1,
+    .section-cream h2,
+    .section-cream h3,
+    .section-cream h4 {
+      color: #0A0603;
+    }
+
+    .section-cream p {
+      color: #3D352E;
+    }
+
+    .section-cream .glass-card {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-cream .glass-card:hover {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Overline */
+    .overline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+      margin-bottom: 24px;
+      padding: 10px 20px;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 100px;
+      background: rgba(212, 175, 55, 0.08);
+      backdrop-filter: blur(10px);
+      position: relative;
+    }
+
+    .overline::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--gold);
+    }
+
+    .section-cream .overline {
+      background: rgba(138, 109, 59, 0.1);
+      border-color: rgba(138, 109, 59, 0.25);
+      color: #6B5637;
+    }
+
+    .section-cream .overline::before {
+      background: #8A6D3B;
+      box-shadow: 0 0 8px rgba(138, 109, 59, 0.3);
+    }
+
+    /* Gold Text */
+    .gold-text {
+      background: linear-gradient(135deg, #FFF8E7 0%, #F5D485 30%, #E8C87A 70%, #D4AF37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      display: inline;
+      font-weight: 800;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px 40px;
+      border-radius: 100px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #FFE4A1 0%, #F5D485 50%, #E8C87A 100%);
+      color: #1A1200;
+      box-shadow:
+        0 4px 20px rgba(212, 175, 55, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow:
+        0 12px 32px rgba(212, 175, 55, 0.45),
+        0 0 0 1px rgba(212, 175, 55, 0.2);
+      background: linear-gradient(135deg, #FFF0C8 0%, #FFE4A1 50%, #F5D485 100%);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px 40px;
+      border-radius: 100px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 2px solid rgba(245, 212, 133, 0.3);
+      background: transparent;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(245, 212, 133, 0.08);
+      border-color: rgba(245, 212, 133, 0.6);
+      transform: translateY(-2px);
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: 968px) {
+
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Image Placeholders & Utilities */
+    .img-placeholder {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 255, 255, 0.03));
+      border: 1px dashed rgba(212, 175, 55, 0.25);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .img-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(212, 175, 55, 0.05) 50%, transparent 60%);
+      background-size: 200% 200%;
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 200%;
+      }
+
+      100% {
+        background-position: -200% -200%;
+      }
+    }
+
+    .doc-thumb {
+      aspect-ratio: 3/4;
+      border-radius: var(--radius-xs);
+      background: linear-gradient(180deg, #FFF 0%, #F5F2ED 100%);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .doc-thumb::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      height: 4px;
+      background: rgba(0, 0, 0, 0.06);
+      border-radius: 2px;
+      box-shadow:
+        0 12px 0 rgba(0, 0, 0, 0.06),
+        0 24px 0 rgba(0, 0, 0, 0.06),
+        0 36px 0 rgba(0, 0, 0, 0.04),
+        0 48px 0 rgba(0, 0, 0, 0.04);
+    }
+
+    .doc-thumb .label {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #8A6D3B;
+      background: rgba(138, 109, 59, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .avatar-placeholder {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(245, 212, 133, 0.2), rgba(245, 212, 133, 0.05));
+      border: 2px solid rgba(245, 212, 133, 0.25);
+      display: grid;
+      place-items: center;
+      color: #FFF;
+      font-weight: 700;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar-placeholder::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+    }
+
+    .mockup-frame {
+      position: relative;
+      background: linear-gradient(145deg, rgba(40, 32, 24, 0.6), rgba(20, 14, 8, 0.8));
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow:
+        0 32px 64px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    }
+
+    /* Icon Box */
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(245, 212, 133, 0.15), rgba(245, 212, 133, 0.05));
+      border: 1px solid rgba(245, 212, 133, 0.3);
+      font-size: 1.3rem;
+      color: var(--gold-bright);
+      margin-bottom: 20px;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .glass-card:hover .icon-box {
+      transform: scale(1.08) rotate(-3deg);
+      border-color: rgba(245, 212, 133, 0.5);
+      background: linear-gradient(135deg, rgba(245, 212, 133, 0.25), rgba(245, 212, 133, 0.1));
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.15);
+    }
+
+    /* Price */
+    .price-wrap {
+      position: relative;
+      max-width: 900px;
+      margin: 48px auto;
+      padding: 56px 48px;
+      background: linear-gradient(145deg, rgba(40, 32, 24, 0.95), rgba(20, 14, 8, 0.98));
+      border-radius: var(--radius);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      box-shadow:
+        0 32px 64px -16px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(212, 175, 55, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .price-mockup {
+      flex: 1;
+      max-width: 380px;
+    }
+
+    .price-mockup img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+    }
+
+    .price-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #F5D485, #E8C87A);
+      color: #1A1200;
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(245, 212, 133, 0.3);
+    }
+
+    .price-strike {
+      font-size: 1.2rem;
+      color: #9A9080;
+      text-decoration: line-through;
+      text-decoration-color: rgba(212, 175, 55, 0.4);
+      text-decoration-thickness: 2px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .price-actual {
+      font-size: clamp(3.5rem, 8vw, 5rem);
+      font-weight: 800;
+      background: linear-gradient(180deg, #FFF8E7 0%, #F5D485 60%, #E8C87A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+      filter: drop-shadow(0 4px 20px rgba(212, 175, 55, 0.25));
+    }
+
+    .price-installments {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+
+    .price-installments strong {
+      color: #FFF;
+      font-weight: 700;
+    }
+
+    .price-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+      margin: 24px 0;
+    }
+
+    /* Guarantee */
+    .guarantee-card {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(212, 175, 55, 0.06);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: var(--radius);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .guarantee-card::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .guarantee-badge {
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .guarantee-badge img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
+    }
+
+
+    .guarantee-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    details {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    details:hover {
+      border-color: rgba(212, 175, 55, 0.25);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      padding: 24px 28px;
+      gap: 16px;
+      transition: var(--transition);
+      text-wrap: pretty;
+    }
+
+    summary:hover {
+      color: var(--gold-bright);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      content: "";
+      position: absolute;
+      background: var(--text-muted);
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+
+    .faq-icon::before {
+      width: 14px;
+      height: 2px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .faq-icon::after {
+      width: 2px;
+      height: 14px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    details[open] .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg) scaleY(0);
+    }
+
+    details[open] summary {
+      color: var(--gold-bright);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .faq-content {
+      padding: 24px 28px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 0;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, rgba(245, 212, 133, 0.2), rgba(245, 212, 133, 0.08));
+      border: 1px solid rgba(245, 212, 133, 0.35);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      font-size: 0.75rem;
+      color: var(--gold-bright);
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    .section-cream .checklist li {
+      color: #3D352E;
+    }
+
+    /* Testimonial Cards */
+    .testimonial-card {
+      background: #304155;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: 36px;
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-card,
+    .testimonial-card p,
+    .testimonial-card h4,
+    .testimonial-card .stars {
+      color: #F1ECE5;
+    }
+
+    .testimonial-card::before {
+      content: "" ";
+ position: absolute;
+      top: 20px;
+      right: 28px;
+      font-size: 4.5rem;
+      color: rgba(245, 212, 133, 0.12);
+      font-family: Georgia, serif;
+      line-height: 1;
+      font-weight: normal;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1.15rem;
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(241, 236, 229, 0.82);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+      flex: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: auto;
+    }
+
+    .testimonial-placeholder .testimonial-text {
+      color: rgba(241, 236, 229, 0.42);
+    }
+
+    .testimonial-placeholder .avatar-placeholder {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-cta {
+      width: 100%;
+      max-width: 560px;
+      padding: 18px 28px;
+      border-radius: 16px;
+    }
+
+    .investment-pack {
+      max-width: 820px;
+      margin: 48px auto 0;
+      padding: 28px 30px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(30, 24, 18, 0.96), rgba(20, 14, 8, 0.98));
+      border: 1px solid rgba(212, 175, 55, 0.16);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+    }
+
+    .investment-pack h3 {
+      color: #FFF;
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 1.15rem;
+    }
+
+    .investment-pack .grid {
+      gap: 18px;
+    }
+
+    .investment-pack .checklist {
+      gap: 12px;
+    }
+
+    .investment-pack .checklist li {
+      color: var(--text-secondary);
+    }
+
+    .investment-pack .checklist li::before {
+      background: linear-gradient(135deg, rgba(245, 212, 133, 0.22), rgba(245, 212, 133, 0.08));
+    }
+
+    /* Comparison */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+    }
+
+    .comparison-col {
+      padding: 40px 36px;
+      background: rgba(25, 20, 15, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .comparison-col:first-child {
+      background: rgba(40, 35, 30, 0.8);
+    }
+
+    .comparison-col h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #FFF;
+      font-weight: 700;
+    }
+
+    .comparison-col:first-child h3 {
+      color: #B0A090;
+    }
+
+    .comparison-col:first-child h3::before {
+      content: "✕";
+      font-size: 1rem;
+      color: #C08070;
+    }
+
+    .comparison-col:last-child h3 {
+      color: var(--gold-bright);
+    }
+
+    .comparison-col:last-child h3::before {
+      content: "★";
+      font-size: 1rem;
+      color: var(--gold);
+    }
+
+    .comparison-col ul {
+      list-style: none;
+    }
+
+    .comparison-col li {
+      margin-bottom: 14px;
+      line-height: 1.5;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .hero-copy {
+      max-width: 560px;
+    }
+
+    .hero-copy h1 {
+      max-width: 560px;
+    }
+
+    .hero-copy p {
+      max-width: 520px;
+    }
+
+    .faq-list details,
+    .faq-list summary,
+    .faq-list .faq-content {
+      color: #1A1510;
+    }
+
+    .faq-list details {
+      background: rgba(255, 255, 255, 0.74);
+      border-color: rgba(138, 109, 59, 0.16);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .faq-list details:hover {
+      background: rgba(255, 255, 255, 0.88);
+      border-color: rgba(138, 109, 59, 0.28);
+    }
+
+    .faq-list summary {
+      color: #1A1510;
+    }
+
+    .faq-list .faq-content {
+      color: #4A423A;
+    }
+
+    .testimonial-placeholder {
+      background: #2E3E50;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #EDEAE3;
+      border-radius: var(--radius);
+      min-height: 260px;
+      display: grid;
+      place-items: center;
+    }
+
+    /* Sticky Bottom Bar (Mobile) */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(10, 6, 3, 0.92);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 16px 24px;
+      z-index: 100;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .sticky-cta .btn {
+      padding: 14px 28px;
+      font-size: 0.85rem;
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .sticky-cta .btn-secondary {
+      padding: 14px 20px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .sticky-cta {
+        display: none;
+      }
+
+      .sticky-cta.visible {
+        display: flex;
+      }
+
+      body {
+        padding-bottom: 80px;
+      }
+
+      .hero-copy,
+      .hero-copy h1,
+      .hero-copy p {
+        max-width: 100%;
+      }
+
+      .grid.grid-2[style*="gap: 48px"] {
+        gap: 32px !important;
+      }
+
+      #hero h1 {
+        font-size: clamp(2rem, 11vw, 3.2rem);
+      }
+
+      #hero p {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+
+      .testimonial-placeholder {
+        min-height: 200px;
+      }
+
+      .testimonial-card {
+        padding: 28px 22px;
+      }
+
+      .item-07-card {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 14px !important;
+      }
+
+      .item-07-card>div:first-child {
+        width: auto !important;
+      }
+
+      .hero-cta {
+        max-width: none;
+        border-radius: 14px;
+      }
+
+      .investment-pack {
+        padding: 22px 18px;
+        border-radius: 20px;
+      }
+
+      .price-wrap {
+        flex-direction: column;
+        padding: 48px 24px;
+        gap: 32px;
+      }
+
+      .price-mockup {
+        max-width: 260px;
+        order: -1;
+      }
+
+      /* Hero Mobile Adaptation - Consolidated */
+      #hero {
+        background: url('imagens/Layout mobile exemplo..png') !important;
+        background-position: center 35% !important;
+        /* Pulled up to bring woman closer to text */
+        background-size: cover !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        text-align: center !important;
+        padding-top: 12vh !important;
+        padding-bottom: 40px !important;
+        overflow: hidden;
+      }
+
+      #hero .container {
+        padding: 0 24px !important;
+        z-index: 2;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+      }
+
+      #hero .hero-grid {
+        justify-items: center !important;
+        max-width: 100% !important;
+        gap: 20px !important;
+        text-align: center !important;
+      }
+
+      #hero .hero-copy {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+
+      #hero .hero-image-mobile-wrap {
+        display: none !important;
+      }
+
+      #hero .overline {
+        margin-bottom: 20px !important;
+        font-size: 0.7rem !important;
+        padding: 8px 16px !important;
+      }
+
+      #hero h1 {
+        font-size: clamp(1.7rem, 8.5vw, 2.2rem) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 12px !important;
+        max-width: 100% !important;
+      }
+
+      #hero p {
+        font-size: 0.9rem !important;
+        margin-bottom: 24px !important;
+        line-height: 1.5 !important;
+        opacity: 0.9;
+        max-width: 100% !important;
+      }
+
+      #hero .hero-cta {
+        padding: 18px 32px !important;
+        font-size: 0.9rem !important;
+        width: auto !important;
+        min-width: 260px;
+      }
+
+      #hero .hero-glow,
+      #hero .hero-circle {
+        display: none !important;
+      }
+    }
+
+    /* Section Header Utility */
+    .section-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 56px;
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    .section-cream .section-header p {
+      color: #5A5046;
+    }
+
+    /* Decorative shapes */
+    .deco-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(212, 175, 55, 0.1);
+      pointer-events: none;
+    }
+
+    .deco-glow {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Tag/Badge */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid;
+    }
+
+    .tag-gold {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: rgba(212, 175, 55, 0.25);
+      color: var(--gold);
+    }
+
+    .tag-dark {
+      background: rgba(0, 0, 0, 0.2);
+      border-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+    }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 768px) {
+      .price-wrap {
+        padding: 40px 24px;
+      }
+
+      .guarantee-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 20px;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .guarantee-badge {
+        width: 88px;
+        height: 88px;
+      }
+
+      .guarantee-badge small {
+        position: static;
+        display: block;
+        margin-top: 8px;
+      }
+
+      .guarantee-copy {
+        max-width: none;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-col:first-child {
+        border-right: 1px solid rgba(212, 175, 55, 0.1);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+      }
+
+      .glass-card {
+        padding: 28px 24px;
+      }
+
+      .section-header {
+        margin-bottom: 40px;
+      }
+
+      .btn,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      /* Other Mobile Tweaks */
+    }
+
+    /* Hero Desktop & Base Styles */
+    #hero {
+      background: linear-gradient(90deg, #0A0603 0%, rgba(10, 6, 3, 0.6) 40%, rgba(10, 6, 3, 0) 100%), url('imagens/hero-bg.png');
+      background-size: cover;
+      background-position: center right;
+      background-attachment: scroll;
+      position: relative;
+    }
+
+    /* Smooth image hover zoom */
+    .img-zoom {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .img-zoom:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section id="hero" class="section"
+    style="padding-top: 80px; padding-bottom: 80px; display: flex; align-items: center; min-height: 95vh;">
+    <div class="deco-glow hero-glow" style="width: 600px; height: 600px; top: -200px; right: -100px;"></div>
+    <div class="deco-circle hero-circle" style="width: 400px; height: 400px; top: 10%; left: -10%; opacity: 0.4;"></div>
+
+    <div class="container">
+      <div class="grid hero-grid"
+        style="grid-template-columns: 1fr; gap: 48px; align-items: center; justify-items: start; max-width: 640px;">
+        <!-- Text -->
+        <div class="reveal active hero-copy">
+          <span class="overline">Kit Contrato de Trabalho Inteligente</span>
+          <h1 style="margin-bottom: 24px;">
+            Contrate empregados com <span class="gold-text">função clara, regras definidas e mais segurança</span> para
+            a sua empresa
+          </h1>
+          <p
+            style="font-size: 1.15rem; color: var(--text-secondary); max-width: 540px; line-height: 1.8; margin-bottom: 32px;">
+            Tenha acesso a documentos estratégicos, tutoriais práticos e suporte jurídico de verdade. Pare de contratar
+            no improviso.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+            <a href="#investimento" class="btn hero-cta">Quero o Kit Agora →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Image Section -->
+      <div class="hero-image-mobile-wrap" style="display: none;">
+        <img src="imagens/hero-bg-mobile.png" alt="Michelle">
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEMA -->
+  <section id="problema" class="section section-cream">
+    <div class="deco-glow" style="width: 500px; height: 500px; bottom: -100px; left: -100px;"></div>
+    <div class="container">
+      <div class="reveal section-header">
+        <span class="overline">O Risco</span>
+        <h2>Você não precisa esperar um problema acontecer para perceber que a sua contratação está fraca</h2>
+        <p>Muitos empresários acreditam que só empresas grandes precisam formalizar bem uma contratação. E é justamente
+          aí que mora o perigo.</p>
+      </div>
+
+      <div class="grid grid-2" style="margin-bottom: 32px;">
+        <div class="glass-card reveal">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 80px; height: 80px; border-radius: var(--radius-xs); overflow: hidden;">
+              <div class="img-placeholder" style="width: 100%; height: 100%; font-size: 2rem;">⚠️</div>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 8px; color: #1A1510;">Função mal definida</h3>
+              <p style="margin: 0; color: #3D352E; font-size: 0.95rem;">O funcionário entra sem função bem definida. As
+                regras ficam "subentendidas". O contrato é genérico demais.</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card reveal reveal-delay-1">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 80px; height: 80px; border-radius: var(--radius-xs); overflow: hidden;">
+              <div class="img-placeholder" style="width: 100%; height: 100%; font-size: 2rem;">📉</div>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 8px; color: #1A1510;">Questionamento constante</h3>
+              <p style="margin: 0; color: #3D352E; font-size: 0.95rem;">O funcionário questiona tarefas porque "isso não
+                está na função". Atrasos e faltas sem consequência.</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card reveal">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 80px; height: 80px; border-radius: var(--radius-xs); overflow: hidden;">
+              <div class="img-placeholder" style="width: 100%; height: 100%; font-size: 2rem;">🔥</div>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 8px; color: #1A1510;">Desgaste diário</h3>
+              <p style="margin: 0; color: #3D352E; font-size: 0.95rem;">Uso de celular, uniforme, postura e conduta
+                geram desgaste. O gestor trava por medo de advertir errado.</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card reveal reveal-delay-1">
+          <div style="display: flex; gap: 16px; align-items: flex-start;">
+            <div style="flex-shrink: 0; width: 80px; height: 80px; border-radius: var(--radius-xs); overflow: hidden;">
+              <div class="img-placeholder" style="width: 100%; height: 100%; font-size: 2rem;">🚫</div>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 8px; color: #1A1510;">Flexibilização perigosa</h3>
+              <p style="margin: 0; color: #3D352E; font-size: 0.95rem;">A empresa flexibiliza, tenta manter boa relação…
+                e depois teme que tudo isso seja usado contra ela.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal"
+        style="background: linear-gradient(135deg, rgba(138,109,59,0.12), rgba(138,109,59,0.04)); border: 1px solid rgba(138,109,59,0.25); border-radius: var(--radius); padding: 40px 32px; text-align: center;">
+        <span class="overline">A Verdade</span>
+        <h3 style="max-width: 720px; margin: 0 auto; font-size: 1.4rem; line-height: 1.4; color: #1A1510;">Não é só
+          sobre ter um contrato. É sobre ter um contrato <span
+            style="color: #8A6D3B; border-bottom: 3px solid rgba(138,109,59,0.3);">forte, claro e estrategicamente
+            estruturado</span> para a realidade da sua empresa.</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUÇÃO -->
+  <section id="oferta" class="section">
+    <div class="container">
+      <div class="reveal section-header">
+        <span class="overline">A Solução</span>
+        <h2>Foi pensando nisso que a Michelle criou o <span class="gold-text">Kit Contrato de Trabalho
+            Inteligente</span></h2>
+        <p>Um material prático, editável e pensado para empresários que querem contratar com mais clareza, mais
+          organização e mais segurança desde o primeiro dia.</p>
+      </div>
+
+      <div class="grid grid-2" style="gap: 40px; align-items: center;">
+        <div class="reveal">
+          <div class="mockup-frame" style="padding: 32px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="img-placeholder"
+                style="aspect-ratio: 4/3; border-radius: var(--radius-sm); font-size: 2.5rem;">📑</div>
+              <div class="img-placeholder"
+                style="aspect-ratio: 4/3; border-radius: var(--radius-sm); font-size: 2.5rem;">📝</div>
+              <div class="img-placeholder"
+                style="aspect-ratio: 4/3; border-radius: var(--radius-sm); font-size: 2.5rem;">📋</div>
+              <div class="img-placeholder"
+                style="aspect-ratio: 4/3; border-radius: var(--radius-sm); font-size: 2.5rem;">🎓</div>
+            </div>
+            <div style="margin-top: 20px; text-align: center;">
+              <div style="font-size: 0.9rem; color: var(--gold); font-weight: 600; margin-bottom: 4px;">+7 documentos
+                profissionais</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Editáveis em Word • Prontos para usar</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="glass-card" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
+            <div class="tag tag-gold" style="margin-bottom: 20px; width: fit-content;">Não é genérico da internet</div>
+            <h3 style="margin-bottom: 16px; font-size: 1.4rem; color: #FFF;">Elaborado por advogada especialista em
+              Direito do Trabalho</h3>
+            <ul class="checklist" style="margin-bottom: 28px;">
+              <li>Cláusulas estratégicas para o dia a dia</li>
+              <li>Linguagem simples e direta</li>
+              <li>Tutorial passo a passo de preenchimento</li>
+              <li>Atualizações inclusas</li>
+              <li>Suporte via grupo VIP</li>
+            </ul>
+            <a href="#kit" class="btn" style="width: fit-content;">Ver todo conteúdo →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUEM -->
+  <section id="para-quem" class="section" style="background: linear-gradient(180deg, var(--bg-base), #0D0905);">
+    <div class="container">
+      <div class="reveal section-header">
+        <span class="overline">Público</span>
+        <h2>Para quem esse Kit faz sentido</h2>
+        <p>Se você se identifica com algum desses perfis, o kit foi feito para você:</p>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="glass-card reveal">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="flex-shrink: 0;">
+              <div class="avatar-placeholder" style="width: 64px; height: 64px; font-size: 1.5rem;">🏢</div>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 8px; color: #FFF;">Empresários que improvisam</h3>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Que querem contratar com mais segurança e
+                sentem que a empresa não pode mais continuar organizando pessoas de forma informal.</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card reveal reveal-delay-1">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="flex-shrink: 0;">
+              <div class="avatar-placeholder" style="width: 64px; height: 64px; font-size: 1.5rem;">👔</div>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 8px; color: #FFF;">Gestores que precisam de respaldo</h3>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Que querem alinhar função, jornada, postura e
+                regras desde o início, e precisam de respaldo para cobrar com clareza.</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card reveal">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="flex-shrink: 0;">
+              <div class="avatar-placeholder" style="width: 64px; height: 64px; font-size: 1.5rem;">📊</div>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 8px; color: #FFF;">Profissionais de RH e DP</h3>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Que precisam documentar melhor a rotina da
+                empresa, advertir, suspender, formalizar mudanças e agir com mais segurança.</p>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card reveal reveal-delay-1">
+          <div style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="flex-shrink: 0;">
+              <div class="avatar-placeholder" style="width: 64px; height: 64px; font-size: 1.5rem;">⚖️</div>
+            </div>
+            <div>
+              <h3 style="margin-bottom: 8px; color: #FFF;">Contadores e advogados</h3>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">Que querem uma base prática e estratégica de
+                documentos para atender seus clientes com mais qualidade.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO -->
+  <section id="kit" class="section section-cream">
+    <div class="container">
+      <div class="reveal section-header">
+        <span class="overline">O Conteúdo</span>
+        <h2>O que você recebe dentro do Kit</h2>
+        <p>Documentos elaborados por advogada, em linguagem simples, com aplicação imediata.</p>
+      </div>
+
+      <div class="grid grid-2" style="margin-bottom: 24px;">
+        <div class="glass-card reveal"
+          style="border-left: 4px solid rgba(138,109,59,0.4); flex-direction: row; gap: 20px; align-items: center;">
+          <div style="flex-shrink: 0; width: 100px;">
+            <div class="doc-thumb" style="height: 120px;">
+              <span class="label" style="font-size: 0.55rem;">Item 01</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 8px; font-size: 1.15rem; color: #1A1510;">Modelo de Contrato de Trabalho completo
+            </h3>
+            <p style="margin: 0; font-size: 0.95rem; color: #3D352E; line-height: 1.6;">Cláusulas estratégicas sobre
+              função, salário, jornada, sigilo, exclusividade, não concorrência, EPI, uso de celular e mais.</p>
+          </div>
+        </div>
+
+        <div class="glass-card reveal reveal-delay-1"
+          style="border-left: 4px solid rgba(138,109,59,0.4); flex-direction: row; gap: 20px; align-items: center;">
+          <div style="flex-shrink: 0; width: 100px;">
+            <div class="doc-thumb" style="height: 120px;">
+              <span class="label" style="font-size: 0.55rem;">Item 02</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 8px; font-size: 1.15rem; color: #1A1510;">Tutorial passo a passo</h3>
+            <p style="margin: 0; font-size: 0.95rem; color: #3D352E; line-height: 1.6;">Orientação para entender como
+              preencher, adaptar e personalizar o contrato conforme a realidade da sua empresa.</p>
+          </div>
+        </div>
+
+        <div class="glass-card reveal"
+          style="border-left: 4px solid rgba(138,109,59,0.4); flex-direction: row; gap: 20px; align-items: center;">
+          <div style="flex-shrink: 0; width: 100px;">
+            <div class="doc-thumb" style="height: 120px;">
+              <span class="label" style="font-size: 0.55rem;">Item 03</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 8px; font-size: 1.15rem; color: #1A1510;">Termo Aditivo</h3>
+            <p style="margin: 0; font-size: 0.95rem; color: #3D352E; line-height: 1.6;">Para formalizar alterações em
+              contratos ativos com segurança, sem deixar tudo no verbal.</p>
+          </div>
+        </div>
+
+        <div class="glass-card reveal reveal-delay-1"
+          style="border-left: 4px solid rgba(138,109,59,0.4); flex-direction: row; gap: 20px; align-items: center;">
+          <div style="flex-shrink: 0; width: 100px;">
+            <div class="doc-thumb" style="height: 120px;">
+              <span class="label" style="font-size: 0.55rem;">Item 04</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 8px; font-size: 1.15rem; color: #1A1510;">Modelo de Descritivo de Função</h3>
+            <p style="margin: 0; font-size: 0.95rem; color: #3D352E; line-height: 1.6;">Documento essencial para evitar
+              conflitos sobre atividade, responsabilidade e expectativa.</p>
+          </div>
+        </div>
+
+        <div class="glass-card reveal"
+          style="border-left: 4px solid rgba(138,109,59,0.4); flex-direction: row; gap: 20px; align-items: center;">
+          <div style="flex-shrink: 0; width: 100px;">
+            <div class="doc-thumb" style="height: 120px;">
+              <span class="label" style="font-size: 0.55rem;">Item 05</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 8px; font-size: 1.15rem; color: #1A1510;">Termo de Câmeras</h3>
+            <p style="margin: 0; font-size: 0.95rem; color: #3D352E; line-height: 1.6;">Formalização do uso de
+              monitoramento com mais organização e respaldo jurídico.</p>
+          </div>
+        </div>
+
+        <div class="glass-card reveal reveal-delay-1"
+          style="border-left: 4px solid rgba(138,109,59,0.4); flex-direction: row; gap: 20px; align-items: center;">
+          <div style="flex-shrink: 0; width: 100px;">
+            <div class="doc-thumb" style="height: 120px;">
+              <span class="label" style="font-size: 0.55rem;">Item 06</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 8px; font-size: 1.15rem; color: #1A1510;">Termo de Uso de Imagem</h3>
+            <p style="margin: 0; font-size: 0.95rem; color: #3D352E; line-height: 1.6;">Para empresas que precisam
+              tratar esse tema com clareza e segurança documental.</p>
+          </div>
+        </div>
+
+        <div class="glass-card reveal item-07-card"
+          style="grid-column: 1 / -1; background: linear-gradient(145deg, rgba(138,109,59,0.15), rgba(138,109,59,0.05)); border-color: rgba(138,109,59,0.3); border-left: 4px solid rgba(138,109,59,0.4); flex-direction: row; gap: 20px; align-items: center; height: auto;">
+          <div style="flex-shrink: 0; width: 100px;">
+            <div class="doc-thumb" style="height: 120px;">
+              <span class="label" style="font-size: 0.55rem;">Item 07</span>
+            </div>
+          </div>
+          <div>
+            <h3 style="margin-bottom: 8px; font-size: 1.15rem; color: #1A1510;">Modelo de Advertência e Suspensão</h3>
+            <p style="margin: 0; font-size: 0.95rem; color: #3D352E; line-height: 1.6;">Para formalizar medidas
+              disciplinares com segurança e menos improviso.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPARAÇÃO -->
+  <section id="diferencial" class="section">
+    <div class="container">
+      <div class="reveal section-header">
+        <span class="overline">Diferença Real</span>
+        <h2 style="max-width: 700px; margin: 0 auto;">Não é só um contrato. É um kit para dar mais clareza e respaldo.
+        </h2>
+      </div>
+
+      <div class="comparison-grid reveal">
+        <div class="comparison-col">
+          <h3>Modelo Genérico</h3>
+          <ul>
+            <li><span style="color: #C08070; font-weight: 700; flex-shrink: 0;">✕</span> Contrato básico e desatualizado
+            </li>
+            <li><span style="color: #C08070; font-weight: 700; flex-shrink: 0;">✕</span> Sem cláusulas estratégicas</li>
+            <li><span style="color: #C08070; font-weight: 700; flex-shrink: 0;">✕</span> Linguagem confusa e cheia de
+              juridiquês</li>
+            <li><span style="color: #C08070; font-weight: 700; flex-shrink: 0;">✕</span> Sem tutorial ou orientação de
+              uso</li>
+            <li><span style="color: #C08070; font-weight: 700; flex-shrink: 0;">✕</span> Zero suporte ou atualizações
+            </li>
+          </ul>
+        </div>
+        <div class="comparison-col" style="background: rgba(30, 24, 18, 0.95);">
+          <h3>Kit Inteligente</h3>
+          <ul>
+            <li><span style="color: #F5D485; font-weight: 700; flex-shrink: 0;">✓</span> Elaborado por especialista em
+              Direito do Trabalho</li>
+            <li><span style="color: #F5D485; font-weight: 700; flex-shrink: 0;">✓</span> Cláusulas estratégicas para
+              proteger seu negócio</li>
+            <li><span style="color: #F5D485; font-weight: 700; flex-shrink: 0;">✓</span> Linguagem simples e direta</li>
+            <li><span style="color: #F5D485; font-weight: 700; flex-shrink: 0;">✓</span> Tutorial passo a passo + aulas
+              gravadas</li>
+            <li><span style="color: #F5D485; font-weight: 700; flex-shrink: 0;">✓</span> Encontros mensais e grupo VIP
+              de suporte</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section id="prova-social" class="section section-cream">
+    <div class="container">
+      <div class="reveal section-header">
+        <span class="overline">Resultados</span>
+        <h2>Empresas que já entenderam que contratar bem não é exagero</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="testimonial-card testimonial-placeholder reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Finalmente tenho contratos que realmente protegem minha empresa. A clareza das
+            cláusulas fez toda a diferença na gestão da equipe."</p>
+          <div class="testimonial-author">
+            <div class="avatar-placeholder">M</div>
+            <div class="author-info">
+              <h4 style="font-size: 0.95rem; color: #FFF; margin-bottom: 2px;">Mariana S.</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Empresária, São Paulo</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card testimonial-placeholder reveal reveal-delay-1">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"O descritivo de função eliminou discussões sobre atribuições. Agora todos sabem
+            exatamente o que devem fazer."</p>
+          <div class="testimonial-author">
+            <div class="avatar-placeholder">R</div>
+            <div class="author-info">
+              <h4 style="font-size: 0.95rem; color: #FFF; margin-bottom: 2px;">Ricardo L.</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Gestor de RH, Belo Horizonte</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card testimonial-placeholder reveal reveal-delay-2">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Pela primeira vez me sinto seguro para formalizar advertências. O material é
+            prático e me deu respaldo para agir."</p>
+          <div class="testimonial-author">
+            <div class="avatar-placeholder">C</div>
+            <div class="author-info">
+              <h4 style="font-size: 0.95rem; color: #FFF; margin-bottom: 2px;">Carlos T.</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Empresário, Curitiba</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PREÇO -->
+  <section id="investimento" class="section" style="padding-bottom: 40px;">
+    <div class="container">
+      <div class="reveal section-header" style="margin-bottom: 40px;">
+        <span class="overline">Investimento</span>
+        <h2 style="margin-bottom: 16px;">Quanto vale ter mais segurança na hora de contratar?</h2>
+        <p>Agora pense: quanto custa para a sua empresa continuar contratando sem função clara e sem documento
+          suficiente?</p>
+      </div>
+
+      <div class="price-wrap reveal">
+        <div class="price-mockup">
+          <img src="imagens/kit-mockup.png" alt="Kit Contrato de Trabalho Inteligente">
+        </div>
+        <div class="price-content">
+          <div class="price-badge">Oferta Especial</div>
+          <span class="price-strike">De R$ 297,00</span>
+          <div class="price-actual">R$ 97</div>
+          <p class="price-installments">ou <strong>12x de R$ 10,03</strong> no cartão de crédito</p>
+
+          <a href="#" class="btn" style="width: 100%; margin-bottom: 20px; padding: 22px;">Quero o Kit Agora →</a>
+
+          <div class="price-divider" style="width: 100%;"></div>
+
+          <div
+            style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 0.85rem; color: var(--text-secondary);">
+            <span style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--gold);">🔒</span>
+              Pagamento seguro</span>
+            <span style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--gold);">↩️</span> 7
+              dias de garantia</span>
+            <span style="display: flex; align-items: center; gap: 8px;"><span style="color: var(--gold);">⚡</span>
+              Acesso imediato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal investment-pack">
+        <h3 style="text-align: center; margin-bottom: 28px; font-size: 1.2rem; color: #1A1510;">Ao entrar hoje, você
+          recebe tudo isso:</h3>
+        <div class="grid grid-2" style="gap: 12px;">
+          <ul class="checklist">
+            <li>Modelo de Contrato completo</li>
+            <li>Tutorial passo a passo</li>
+            <li>Termo Aditivo</li>
+            <li>Descritivo de Função</li>
+            <li>Termo de Câmeras</li>
+            <li>Termo de Uso de Imagem</li>
+            <li>Advertência e Suspensão</li>
+          </ul>
+          <ul class="checklist">
+            <li>Masterclass exclusiva</li>
+            <li>Aula: Contratar sob medida</li>
+            <li>Oficina de comunicação</li>
+            <li>Encontros mensais Zoom</li>
+            <li>Grupo WhatsApp VIP</li>
+            <li>Acesso vitalício</li>
+            <li>Atualizações inclusas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="section section-cream" style="padding-top: 60px;">
+    <div class="container">
+      <div class="guarantee-card reveal">
+        <div class="guarantee-badge">
+          <img src="imagens/selo-garantia.jpg" alt="7 Dias de Garantia">
+        </div>
+        <div class="guarantee-copy">
+          <h3 style="font-size: 1.5rem; margin-bottom: 14px; color: #1A1510;">Garantia incondicional de 7 dias</h3>
+          <p style="color: #4A423A; line-height: 1.7; margin: 0; font-size: 1rem;">Você pode entrar, acessar o material,
+            conhecer o conteúdo e entender se ele faz sentido para a sua realidade. Se dentro de 7 dias você concluir
+            que o Kit não é para você, basta solicitar o reembolso. <strong style="color: #1A1510;">Sem risco, sem
+              perguntas.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section">
+    <div class="deco-glow" style="width: 600px; height: 600px; top: 10%; right: -10%; opacity: 0.15;"></div>
+    <div class="container">
+      <div class="grid grid-2" style="gap: 64px; align-items: center;">
+        <!-- Image Side -->
+        <div class="reveal">
+          <div style="position: relative; max-width: 480px; margin: 0 auto;">
+            <div
+              style="position: absolute; inset: -15px; border: 1px solid rgba(212, 175, 55, 0.2); border-radius: var(--radius); transform: rotate(-3deg); z-index: -1;">
+            </div>
+            <div
+              style="position: absolute; inset: -15px; border: 1px solid rgba(212, 175, 55, 0.1); border-radius: var(--radius); transform: rotate(2deg); z-index: -1;">
+            </div>
+            <div style="border-radius: var(--radius); overflow: hidden; box-shadow: 0 32px 64px rgba(0,0,0,0.5);">
+              <img src="imagens/michelle.png" alt="Michelle"
+                style="width: 100%; display: block; transform: scale(1.01);" class="img-zoom">
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Side -->
+        <div class="reveal reveal-delay-1">
+          <span class="overline">A Especialista</span>
+          <h2 style="margin-bottom: 24px;">Conheça a Michelle</h2>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">Michelle é especialista em
+              Consultoria Empresarial Trabalhista e, desde 2015, ajuda empresas a estruturarem suas relações de trabalho
+              com mais clareza, segurança e inteligência. Ao longo da sua trajetória, já impactou mais de <strong
+                style="color: #FFF;">21 mil empresas</strong> por meio dos seus produtos.</p>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">Sua atuação parte de uma
+              convicção forte: <strong style="color: #FFF;">empresas sólidas não são construídas no improviso</strong>.
+              São construídas com regras claras, liderança, estrutura e decisões inteligentes.</p>
+
+            <div
+              style="margin-top: 12px; padding: 32px; border-left: 4px solid var(--gold); background: linear-gradient(90deg, rgba(245,212,133,0.12), transparent); border-radius: 0 24px 24px 0; position: relative; isolation: isolate;">
+              <span
+                style="position: absolute; top: 0; left: 12px; font-size: 6rem; color: rgba(245, 212, 133, 0.08); line-height: 1; font-family: serif; pointer-events: none;">"</span>
+              <p
+                style="margin: 0; font-style: italic; color: #FFF; font-size: 1.15rem; line-height: 1.6; position: relative; z-index: 1;">
+                "Empresa séria não improvisa contratação. Prevenção é inteligência e segurança jurídica caminha junto
+                com visão estratégica."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-cream">
+    <div class="container" style="max-width: 800px;">
+      <div class="reveal" style="text-align: center; margin-bottom: 44px;">
+        <span class="overline">Dúvidas</span>
+        <h2>Perguntas frequentes</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <details>
+          <summary>Como recebo o material após a compra? <div class="faq-icon"></div>
+          </summary>
+          <div class="faq-content">Imediatamente após a confirmação do pagamento, você recebe acesso à área de membros
+            por e-mail com todos os documentos disponíveis para download e os links das aulas gravadas.</div>
+        </details>
+        <details>
+          <summary>Posso usar os modelos para várias empresas? <div class="faq-icon"></div>
+          </summary>
+          <div class="faq-content">Sim. A licença permite o uso dos documentos para a sua empresa ou empresas que você
+            gerencie. Não é permitida a revenda dos modelos ou uso para terceiros de forma independente.</div>
+        </details>
+        <details>
+          <summary>Os documentos servem para qualquer estado do Brasil? <div class="faq-icon"></div>
+          </summary>
+          <div class="faq-content">Sim. Os modelos são elaborados de acordo com a CLT (Consolidação das Leis do
+            Trabalho), válida em todo território nacional. Recomendamos sempre consultar atualizações locais
+            específicas.</div>
+        </details>
+        <details>
+          <summary>Como funcionam os encontros mensais? <div class="faq-icon"></div>
+          </summary>
+          <div class="faq-content">Uma vez por mês, a Michelle realiza uma videoconferência ao vivo (Zoom) para tirar
+            dúvidas dos alunos sobre aplicação dos materiais e atualizações da área trabalhista.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="section"
+    style="background: linear-gradient(180deg, transparent, rgba(245,212,133,0.03)); padding-bottom: 48px;">
+    <div class="container" style="text-align: center;">
+      <div class="reveal">
+        <h2 style="margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto;">Pare de contratar no
+          improviso. Tenha contratos que realmente protegem sua empresa.</h2>
+        <a href="#investimento" class="btn" style="margin-bottom: 20px;">Quero o Kit Contrato de Trabalho Inteligente
+          →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer
+    style="border-top: 1px solid rgba(212,175,55,0.12); padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.85rem;">
+    <div class="container">
+      <p style="margin-bottom: 8px; color: #FFF; font-weight: 600;">© 2024 Kit Contrato de Trabalho Inteligente. Todos
+        os direitos reservados.</p>
+      <p style="margin: 0; line-height: 1.5;">Michelle - Consultoria Empresarial Trabalhista<br>CNPJ XX.XXX.XXX/0001-XX
+        | contato@email.com</p>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <a href="#investimento" class="btn">Quero o Kit →</a>
+  </div>
+
+  <script>
+    // Intersection Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -60px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Sticky CTA Logic
+    const stickyCta = document.querySelector('.sticky-cta');
+    const heroSection = document.querySelector('#hero');
+
+    if (stickyCta && heroSection) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // Hide when Hero is visible, show otherwise
+          if (entry.isIntersecting) {
+            stickyCta.classList.remove('visible');
+          } else {
+            stickyCta.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      heroObserver.observe(heroSection);
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
