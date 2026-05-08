@@ -1988,7 +1988,7 @@
         max-height: none !important;
         padding: 0 !important;
         overflow: hidden !important;
-        background: url('imagens/hero-mobile-figma.png') center top / cover no-repeat !important;
+        background: url('imagens/Layout mobile exemplo..png') center top / cover no-repeat !important;
       }
 
       #hero .container {
@@ -2149,7 +2149,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url('imagens/problema-bg-desktop-figma.png');
+      background-image: none;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -2157,6 +2157,11 @@
       pointer-events: none;
       z-index: 0;
     }
+
+    #problema.bg-loaded::before {
+      background-image: url('imagens/problema-bg-desktop-figma.png');
+    }
+
 
     #problema::after {
       content: "";
@@ -2184,7 +2189,7 @@
         background: linear-gradient(180deg, #F8F6F1 0%, #EFEBE3 100%) !important;
       }
 
-      #problema::before {
+      #problema.bg-loaded::before {
         background-image: url('imagens/problema-bg-mobile-figma.png');
         background-size: auto 100%;
         background-position: 66% top;
@@ -2932,9 +2937,10 @@
     }
 
     .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 10px;
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translate(-50%, -140%);
       background: #fff;
       color: #000;
       padding: 10px 14px;
@@ -2945,7 +2951,7 @@
     }
 
     .skip-link:focus {
-      top: 10px;
+      transform: translate(-50%, 0);
     }
 
     a:focus-visible,
@@ -2997,7 +3003,7 @@
             </p>
 
             <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
-              <a href="https://kit.cursodescomplicandosites.com.br/" class="btn hero-cta"
+              <a href="#" class="btn hero-cta"
                 rel="noopener noreferrer">Quero o Kit Agora →</a>
             </div>
           </div>
@@ -3149,7 +3155,7 @@
                 <li>Atualizações inclusas</li>
                 <li>Suporte via grupo VIP</li>
               </ul>
-              <a href="https://kit.cursodescomplicandosites.com.br/" class="btn cta-tight cta-tight-mobile"
+              <a href="#" class="btn cta-tight cta-tight-mobile"
                 rel="noopener noreferrer">Ver todo conteúdo →</a>
             </div>
           </div>
@@ -3551,7 +3557,7 @@
             <div class="price-actual">R$ 97</div>
             <p class="price-installments">ou <strong>12x de R$ 10,03</strong> no cartão de crédito</p>
 
-            <a href="https://kit.cursodescomplicandosites.com.br/" class="btn" rel="noopener noreferrer"
+            <a href="#" class="btn" rel="noopener noreferrer"
               style="width: 100%; margin-bottom: 20px; padding: 22px;">Quero o Kit Agora →</a>
 
             <div class="price-divider" style="width: 100%;"></div>
@@ -3716,7 +3722,7 @@
           <h2>Contratar com clareza começa pelo documento certo.</h2>
           <p>Organize função, regras e responsabilidades desde o primeiro dia com um kit pensado para reduzir improvisos
             e dar mais segurança à sua empresa.</p>
-          <a href="https://kit.cursodescomplicandosites.com.br/" class="btn cta-tight" rel="noopener noreferrer">Quero o
+          <a href="#" class="btn cta-tight" rel="noopener noreferrer">Quero o
             Kit Agora →</a>
         </div>
       </div>
@@ -3734,7 +3740,7 @@
 
     <!-- Sticky Mobile CTA -->
     <div class="sticky-cta">
-      <a href="https://kit.cursodescomplicandosites.com.br/" class="btn" rel="noopener noreferrer">Quero o Kit →</a>
+      <a href="#" class="btn" rel="noopener noreferrer">Quero o Kit →</a>
     </div>
   </main>
 
@@ -3784,7 +3790,21 @@
       stickySuppressZones.forEach(zone => suppressObserver.observe(zone));
     }
 
+    // Defer heavy background image until the section is near viewport.
+    const problemaSection = document.querySelector('#problema');
+    if (problemaSection) {
+      const problemaObserver = new IntersectionObserver((entries, obs) => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          problemaSection.classList.add('bg-loaded');
+          obs.disconnect();
+        }
+      }, { rootMargin: '300px 0px' });
+
+      problemaObserver.observe(problemaSection);
+    }
+
   </script>
 </body>
 
 </html>
+
