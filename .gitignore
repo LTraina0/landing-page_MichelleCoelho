@@ -12,3 +12,7 @@ dist/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Cache e build tools
+.npm-cache/
+.netlify/
