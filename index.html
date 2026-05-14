@@ -173,10 +173,10 @@
     }
 
     h1 {
-      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
       font-weight: 800;
       letter-spacing: -0.03em;
-      line-height: 1.05;
+      line-height: 1.15;
     }
 
     h2 {
@@ -359,11 +359,12 @@
     .gold-text {
       background: linear-gradient(135deg, #FFF8E7 0%, #F5D485 30%, #E8C87A 70%, #D4AF37 100%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
       position: relative;
       display: inline;
       font-weight: 800;
+      filter: drop-shadow(0 2px 15px rgba(212, 175, 55, 0.25));
     }
 
     /* Buttons */
@@ -708,6 +709,7 @@
       font-weight: 800;
       background: linear-gradient(180deg, #FFF8E7 0%, #F5D485 60%, #E8C87A 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1;
       margin-bottom: 12px;
@@ -1084,16 +1086,48 @@
     }
 
     .hero-copy {
-      max-width: 560px;
+      max-width: 500px;
     }
 
     .hero-copy h1 {
-      max-width: 560px;
+      max-width: 480px;
+      margin-bottom: 24px !important;
     }
 
     .hero-copy p {
-      max-width: 520px;
-      letter-spacing: 0.005em;
+      max-width: 460px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 32px !important;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-trust-indicators {
+      display: flex;
+      gap: 12px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-trust-indicators span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-trust-indicators span::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: inline-block;
     }
 
     .faq-list details,
@@ -3048,25 +3082,29 @@
 
       <div class="container">
         <div class="grid hero-grid"
-          style="grid-template-columns: 1fr; gap: 48px; align-items: center; justify-items: start; max-width: 640px;">
+          style="grid-template-columns: 1fr; gap: 48px; align-items: center; justify-items: start; max-width: 500px;">
           <!-- Text -->
           <div class="reveal active hero-copy">
             <span class="overline">Kit Contrato de Trabalho Inteligente</span>
-            <h1 id="titulo-principal" style="margin-bottom: 24px;">
+            <h1 id="titulo-principal">
               Contrate empregados com <span class="gold-text">função clara, regras definidas e mais segurança</span>
               para
               a sua empresa
             </h1>
-            <p
-              style="font-size: 1.15rem; color: var(--text-secondary); max-width: 540px; line-height: 1.8; margin-bottom: 32px;">
+            <p class="hero-description">
               Tenha acesso a documentos estratégicos, tutoriais práticos e suporte jurídico de verdade. Pare de
               contratar
               no improviso.
             </p>
 
-            <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+            <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; width: 100%;">
               <a href="https://pay.hotmart.com/Y97284855G?off=g0cj9zvw" class="btn hero-cta"
-                rel="noopener noreferrer">Quero o Kit Agora →</a>
+                rel="noopener noreferrer" style="width: 100%;">Quero o Kit Agora →</a>
+              <div class="hero-trust-indicators">
+                <span>7 dias de garantia</span>
+                <span>Acesso imediato e vitalício</span>
+                <span>+21 mil empresas impactadas</span>
+              </div>
             </div>
           </div>
         </div>
@@ -3495,102 +3533,38 @@
         </div>
 
         <div class="proof-cards-desktop reveal">
-          <article class="proof-card tall">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Tive muitas mudanças!</h3>
-            <p class="proof-sub">Paula Ramos - Empresária</p>
-            <p class="proof-text">Atualizei nossos contratos, hoje não sou mais refém da contabilidade. Refiz todos os
-              meus
-              documentos. Aprendi aplicar advertência e suspensão. Mudei a forma de agir com a equipe e melhorou muito
-              os
-              resultados.</p>
+          <article class="proof-card" style="padding: 0; background: transparent; box-shadow: none;">
+            <img src="imagens/Depoimento-1.webp" alt="Depoimento Paula Ramos" style="width: 100%; height: auto; display: block; border-radius: 8.64px;">
           </article>
 
-          <article class="proof-card short">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Cláudia</h3>
-            <p class="proof-sub">Empresa Top Toldos</p>
-            <p class="proof-text">Foi um divisor de águas na nossa empresa, tanta informação, conhecimento, nos ajudou
-              muito
-              até a fazer a gestão. Muito satisfeita, gratidão.</p>
+          <article class="proof-card" style="padding: 0; background: transparent; box-shadow: none;">
+            <img src="imagens/Depoimento-2.webp" alt="Depoimento Cláudia" style="width: 100%; height: auto; display: block; border-radius: 8.64px;">
           </article>
 
-          <article class="proof-card medium">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Foi essencial pra mim!</h3>
-            <p class="proof-sub">Tatiane Silva - Analista de RH</p>
-            <p class="proof-text">Além da escolha assertiva do contrato, a empresa conseguiu alinhar junto ao
-              colaborador o
-              objetivo da sua contratação e fazer um acompanhamento ativo através de feedbacks e plano de ação
-              individual.</p>
+          <article class="proof-card" style="padding: 0; background: transparent; box-shadow: none;">
+            <img src="imagens/Depoimento-3.webp" alt="Depoimento Tatiane Silva" style="width: 100%; height: auto; display: block; border-radius: 8.64px;">
           </article>
 
-          <article class="proof-card short">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Recomendo e muito!</h3>
-            <p class="proof-sub">Giorgia - Empresária</p>
-            <p class="proof-text">Passei a ter muita segurança na tomada de decisões dentro da empresa e hoje sei até
-              onde
-              posso ir com os empregados. Recomendo e muito o seu trabalho.</p>
+          <article class="proof-card" style="padding: 0; background: transparent; box-shadow: none;">
+            <img src="imagens/Depoimento-4.webp" alt="Depoimento Giorgia" style="width: 100%; height: auto; display: block; border-radius: 8.64px;">
           </article>
         </div>
 
         <div class="proof-cards-mobile reveal">
-          <article class="proof-card">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Taiza Corrêa</h3>
-            <p class="proof-sub">Empresária</p>
-            <p class="proof-text">Achei que estava tudo certo, até quase levar um processo. Com esse modelo, mudei tudo
-              e
-              hoje me sinto segura.</p>
+          <article class="proof-card" style="padding: 0; background: transparent; box-shadow: none;">
+            <img src="imagens/Depoimento-1.webp" alt="Depoimento Paula Ramos" style="width: 100%; height: auto; display: block; border-radius: 8.64px;">
           </article>
 
-          <article class="proof-card">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Cláudia</h3>
-            <p class="proof-sub">Empresa Top Toldos</p>
-            <p class="proof-text">Foi um divisor de águas na nossa empresa, tanta informação, conhecimento, nos ajudou
-              muito
-              até a fazer a gestão. Muito satisfeita, gratidão.</p>
+          <article class="proof-card" style="padding: 0; background: transparent; box-shadow: none;">
+            <img src="imagens/Depoimento-2.webp" alt="Depoimento Cláudia" style="width: 100%; height: auto; display: block; border-radius: 8.64px;">
           </article>
 
-          <article class="proof-card">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Luciana Goulart</h3>
-            <p class="proof-sub">Empresária</p>
-            <p class="proof-text">Hoje me sinto aliviada de saber que a minha empresa está bem documentada e agora
-              consigo
-              fazer a gestão dos contratos com segurança.</p>
+          <article class="proof-card" style="padding: 0; background: transparent; box-shadow: none;">
+            <img src="imagens/Depoimento-3.webp" alt="Depoimento Tatiane Silva" style="width: 100%; height: auto; display: block; border-radius: 8.64px;">
           </article>
 
-          <article class="proof-card">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Foi essencial pra mim!</h3>
-            <p class="proof-sub">Tatiane Silva - Analista de RH</p>
-            <p class="proof-text">Além da escolha assertiva do contrato, a empresa conseguiu alinhar junto ao
-              colaborador o
-              objetivo da sua contratação e fazer um acompanhamento ativo através de feedbacks e plano de ação
-              individual.</p>
-          </article>
-
-          <article class="proof-card">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Tive muitas mudanças!</h3>
-            <p class="proof-sub">Paula Ramos - Empresária</p>
-            <p class="proof-text">Atualizei nossos contratos, hoje não sou mais refém da contabilidade. Refiz todos os
-              meus
-              documentos. Aprendi aplicar advertência e suspensão. Mudei a forma de agir com a equipe e melhorou muito
-              os
-              resultados.</p>
-          </article>
-
-          <article class="proof-card">
-            <div class="proof-stars">★★★★★</div>
-            <h3 class="proof-title">Recomendo e muito!</h3>
-            <p class="proof-sub">Giorgia - Empresária</p>
-            <p class="proof-text">Passei a ter muita segurança na tomada de decisões dentro da empresa e hoje sei até
-              onde
-              posso ir com os empregados. Recomendo e muito o seu trabalho.</p>
+          <article class="proof-card" style="padding: 0; background: transparent; box-shadow: none;">
+            <img src="imagens/Depoimento-4.webp" alt="Depoimento Giorgia" style="width: 100%; height: auto; display: block; border-radius: 8.64px;">
           </article>
         </div>
 
